@@ -14,6 +14,7 @@ function Body() {
       <img src={gatostvgirl} alt="foto do álbum" width={800} height={872}/>
       <p className='nomebanda'>TV Girl, Mac De Marco</p>
       </div>
+      <button className='playalbum'><a href=""><span>▶</span></a></button>
       </div>
       </div>
     </>
