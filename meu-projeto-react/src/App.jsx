@@ -4,8 +4,11 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import gatostvgirl from './gatostvgirl.jpg'
+import { Routes, Route, Link } from 'react-router-dom'
+import Playlist from './Playlist'
 
 function Body() {
+  const[play, setPlay] = useState(false)
   return (
     <>
     <div className='divpae2'>
@@ -14,10 +17,25 @@ function Body() {
       <img src={gatostvgirl} alt="foto do álbum" width={800} height={872}/>
       <p className='nomebanda'>TV Girl, Mac De Marco</p>
       </div>
-      <button className='playalbum'><a href=""><span>▶</span></a></button>
+   <Link to="/playlist">
+      <button className='playalbum'
+      onClick={() => setPlay(!play)} > <span>{play ? '⏸' : '▶'}</span> 
+      </button>
+   </Link>
       </div>
       </div>
     </>
   ) 
 }
-export default Body
+function App() {
+  return (
+    <Routes>
+
+      <Route path="/" element={<Body />} />
+
+      <Route path="/playlist" element={<Playlist />} />
+
+    </Routes>
+  )
+}
+export default App

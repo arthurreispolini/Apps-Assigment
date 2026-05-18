@@ -1,0 +1,48 @@
+
+.colorheader{
+    background: linear-gradient(rgb(40, 40, 224), purple);
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px; 
+}
+.headerimg{
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 20px;
+    margin-top: 60px;
+    background-color: aqua;
+    border: none;
+}
+.headerimg img{
+    gap: 0px;
+    margin: 0;
+    object-fit: cover;
+}
+.ladodaimagem{
+    color: #fff;
+    margin-left: 30px;
+}
+.h1ladodaimg{
+    font-size: 60px;
+}
+.antes_da_playlist{
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(purple, #121212);
+    border: 1px solid yellow;
+}
+.playalbum2{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  background-color: #1db954;
+  width: 60px;
+  height: 60px;
+  border: hidden;
+  font-size: 20px;
+}
