@@ -1,5 +1,33 @@
-.oi{
- background-color: red;
-  width: 200px;
-  height: 200px;
+
+body{
+  background-color: #121212;
+}
+.divpae2{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.divpae{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 900px;
+height:1200px ;
+border: 1px solid yellow;
+}
+.principal{
+  width: 800px;
+  height: 1000px;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 100px;
+  border: 1px solid yellow;
+}
+.principal img{
+  object-fit: cover;
+  border-radius: 30px;
+}
+.nomebanda{
+  color: #b3b3b3;
+  font-size: 30px;
 }
