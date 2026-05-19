@@ -11,6 +11,7 @@ import { FiUserPlus } from 'react-icons/fi'
 import { BsThreeDots } from 'react-icons/bs'
 import { FaSearch } from 'react-icons/fa'
 import { LuClock } from 'react-icons/lu'
+import { FaMusic } from 'react-icons/fa'
 
 function Playlist() {
    const[play2, setPlay2] = useState(false)
@@ -82,6 +83,15 @@ function Playlist() {
 </span>
     </div>
     <hr className='hrfora' />
+    <div className='cardmusic'>
+<div className="capa-padrao">
+  <FaMusic />
+</div>
+<div className='musiccard'>
+  <img src={Marco} alt="foto" />
+</div>
+<p className='pcardmusic'>Chambler Of Reflection</p>
+</div>
     </div>  
   )
 }
