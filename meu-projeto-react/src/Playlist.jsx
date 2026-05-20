@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -12,12 +12,30 @@ import { BsThreeDots } from 'react-icons/bs'
 import { FaSearch } from 'react-icons/fa'
 import { LuClock } from 'react-icons/lu'
 import { FaMusic } from 'react-icons/fa'
+import { FaPlay, FaPause } from 'react-icons/fa';
+import chambler from './chambler.mp3'
 
 function Playlist() {
    const[play2, setPlay2] = useState(false)
    const [shuffle, setShuffle] = useState(false)
    const [baixado, setBaixado] = useState(false)
+   const [baixado2, setBaixado2] = useState(false)
+  const [tocando, setTocando] = useState(false);
+  const audioRef = useRef(null);
+
+  const urlMusica =chambler;
+
+  const alternarPlay = () => {
+    if (tocando) {
+      audioRef.current.pause(); 
+    } else {
+      audioRef.current.play();  
+    }
+    setTocando(!tocando); 
+  };
+
   return (
+  
     <div className='pae1'>
       <div className='colorheader'>
 <div className='headerimg'> 
@@ -32,9 +50,12 @@ function Playlist() {
      </div>
     </div>
     <div className='antes_da_playlist'>
-      <button className='playalbum2'
-      onClick={() => setPlay2(!play2)} > <span className='spanalbum2'>{play2 ? '⏸' : '▶'}</span> 
+      <div className="container-playlist">
+      <audio ref={audioRef} src={urlMusica} />
+      <button className="playalbum2" onClick={alternarPlay}>
+        {tocando ? <FaPause /> : <FaPlay />}
       </button>
+    </div>
       <div className='quadrodamusica'>
         <img src={Marco} alt="foto" />
       </div>
@@ -83,6 +104,7 @@ function Playlist() {
 </span>
     </div>
     <hr className='hrfora' />
+    <br />
     <div className='cardmusic'>
 <div className="capa-padrao">
   <FaMusic />
@@ -91,7 +113,10 @@ function Playlist() {
   <img src={Marco} alt="foto" />
 </div>
 <p className='pcardmusic'>Chambler Of Reflection</p>
-</div>
+<p className='psla1'> Salad Days</p>
+<p className='psla2'> 19 de jun. de 2023</p>
+<p className='psla3'>3:52</p>
+</div> 
     </div>  
   )
 }
